@@ -67,7 +67,8 @@ void Ccamera::updateProjection(void) {
   }
 }
 
-void Ccamera::write(const std::string file) {
+void Ccamera::write(const std::string file) 
+{
   ofstream ofstr;
   ofstr.open(file.c_str());
   if (m_txtType == 0) {
@@ -79,7 +80,8 @@ void Ccamera::write(const std::string file) {
 	  << m_extrinsics[2] << ' ' << m_extrinsics[3] << ' '
 	  << m_extrinsics[4] << ' ' << m_extrinsics[5] << endl;
   }
-  else if (m_txtType == 2) {
+  else if (m_txtType == 2) 
+  {
     ofstr << "CONTOUR2" << endl;
     for (int i = 0; i < 6; ++i)
       ofstr << m_intrinsics[i] << ' ';
